@@ -26,14 +26,22 @@ class ViewController: UIViewController {
   @IBOutlet weak var leftSwipeLabel: UILabel!
   @IBOutlet weak var rightSwipeLabel: UILabel!
   
+  @IBOutlet weak var longPressLabel: UILabel!
+  
   @IBOutlet weak var userAccelerationLabel: UILabel!
   @IBOutlet weak var gravityLabel: UILabel!
+  
+  @IBOutlet weak var panViewConstraintCenterX: NSLayoutConstraint!
+  @IBOutlet weak var panViewConstraintCenterY: NSLayoutConstraint!
+  
+  var originalPanViewCenter: CGPoint?
+
   
   var controller : GCController?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    originalPanViewCenter = CGPoint(x: panViewConstraintCenterX.constant, y: panViewConstraintCenterY.constant)
     addGestureRecognizerWithType(UIPressType.Select, selector: "select");
     addGestureRecognizerWithType(UIPressType.Menu, selector: "menu");
     addGestureRecognizerWithType(UIPressType.PlayPause, selector: "playPause");
@@ -52,6 +60,41 @@ class ViewController: UIViewController {
       selector: "controllerDidConnect:",
       name: GCControllerDidConnectNotification,
       object: nil)
+    
+    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "userPanned:")
+    view.addGestureRecognizer(panGestureRecognizer)
+    
+    let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
+    view.addGestureRecognizer(longPressGestureRecognizer)
+  }
+  
+  func longPress(longPressGestureRecognizer : UILongPressGestureRecognizer) {
+    switch (longPressGestureRecognizer.state) {
+      case .Began:
+      longPressLabel.textColor = UIColor.redColor()
+      break
+      
+      case .Ended:
+      longPressLabel.textColor = UIColor.blackColor()
+      break
+      
+      default: 
+      break
+      
+    }
+  }
+  
+  func userPanned(panGestureRecognizer : UIPanGestureRecognizer) {
+    let translation = panGestureRecognizer.translationInView(self.view)
+    print(translation)
+    guard let originalCenter = originalPanViewCenter else { return }
+    panViewConstraintCenterX.constant = originalCenter.x
+    panViewConstraintCenterY.constant = originalCenter.y
+    
+    if (panGestureRecognizer.state == .Changed) {
+      panViewConstraintCenterX.constant += translation.x
+      panViewConstraintCenterY.constant += translation.y
+    }
   }
   
   // MARK: Remote events setup
