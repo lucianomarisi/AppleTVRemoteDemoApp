@@ -49,19 +49,24 @@ class ViewController: UIViewController {
     addGestureRecognizerWithType(UIPressType.LeftArrow, selector: "leftArrow");
     addGestureRecognizerWithType(UIPressType.RightArrow, selector: "rightArrow");
     
-    addSwipeGestureRecognizerWithType(.Right, selector: "swipedRight")
-    addSwipeGestureRecognizerWithType(.Left, selector: "swipedLeft")
-    addSwipeGestureRecognizerWithType(.Up, selector: "swipedUp")
-    addSwipeGestureRecognizerWithType(.Down, selector: "swipedDown")
+    // Since the swipe and pan gesture recognizers interfere with each other
+    // change this to try either the pan or the swipe
+    let setupSwipeInsteadOfPanGestureRecognizer = false;
+    if (setupSwipeInsteadOfPanGestureRecognizer) {
+      addSwipeGestureRecognizerWithType(.Right, selector: "swipedRight")
+      addSwipeGestureRecognizerWithType(.Left, selector: "swipedLeft")
+      addSwipeGestureRecognizerWithType(.Up, selector: "swipedUp")
+      addSwipeGestureRecognizerWithType(.Down, selector: "swipedDown")
+    } else {
+      let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "userPanned:")
+      view.addGestureRecognizer(panGestureRecognizer)
+    }
     
     NSNotificationCenter.defaultCenter().addObserver(
       self,
       selector: "controllerDidConnect:",
       name: GCControllerDidConnectNotification,
       object: nil)
-    
-    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "userPanned:")
-    view.addGestureRecognizer(panGestureRecognizer)
     
     let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
     view.addGestureRecognizer(longPressGestureRecognizer)
