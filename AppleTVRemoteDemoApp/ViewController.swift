@@ -10,7 +10,6 @@ import UIKit
 import GameController
 
 class ViewController: UIViewController {
-
   
   @IBOutlet weak var selectLabel: UILabel!
   @IBOutlet weak var menuLabel: UILabel!
@@ -67,7 +66,9 @@ class ViewController: UIViewController {
     let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
     view.addGestureRecognizer(longPressGestureRecognizer)
   }
-  
+
+  // MARK: UILongPressGestureRecognizer
+
   func longPress(longPressGestureRecognizer : UILongPressGestureRecognizer) {
     switch (longPressGestureRecognizer.state) {
       case .Began:
@@ -83,6 +84,8 @@ class ViewController: UIViewController {
       
     }
   }
+  
+  // MARK: UIPanGestureRecognizer
   
   func userPanned(panGestureRecognizer : UIPanGestureRecognizer) {
     let translation = panGestureRecognizer.translationInView(self.view)
