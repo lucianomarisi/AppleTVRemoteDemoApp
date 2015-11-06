@@ -1,3 +1,4 @@
+sudo: false
 language: swift
 script: 
 - xctool -project AppleTVRemoteDemoApp.xcodeproj -scheme AppleTVRemoteDemoApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
