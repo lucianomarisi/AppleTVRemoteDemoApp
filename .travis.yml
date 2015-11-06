@@ -1,3 +1,4 @@
 language: objective-c
+osx_image: xcode7.1
 script: 
 - xctool -project AppleTVRemoteDemoApp.xcodeproj -scheme AppleTVRemoteDemoApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
