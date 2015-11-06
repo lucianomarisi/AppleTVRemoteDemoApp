@@ -10,7 +10,6 @@
 		4FCB9BC91BCC608D00B4F841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB9BC81BCC608D00B4F841 /* AppDelegate.swift */; };
 		4FCB9BCB1BCC608D00B4F841 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB9BCA1BCC608D00B4F841 /* ViewController.swift */; };
 		4FCB9BCE1BCC608D00B4F841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB9BCC1BCC608D00B4F841 /* Main.storyboard */; };
-		4FCB9BD01BCC608D00B4F841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB9BCF1BCC608D00B4F841 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +17,6 @@
 		4FCB9BC81BCC608D00B4F841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCB9BCA1BCC608D00B4F841 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4FCB9BCD1BCC608D00B4F841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4FCB9BCF1BCC608D00B4F841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FCB9BD11BCC608E00B4F841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +53,6 @@
 				4FCB9BC81BCC608D00B4F841 /* AppDelegate.swift */,
 				4FCB9BCA1BCC608D00B4F841 /* ViewController.swift */,
 				4FCB9BCC1BCC608D00B4F841 /* Main.storyboard */,
-				4FCB9BCF1BCC608D00B4F841 /* Assets.xcassets */,
 				4FCB9BD11BCC608E00B4F841 /* Info.plist */,
 			);
 			path = AppleTVRemoteDemoApp;
@@ -119,7 +116,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FCB9BD01BCC608D00B4F841 /* Assets.xcassets in Resources */,
 				4FCB9BCE1BCC608D00B4F841 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,8 +230,6 @@
 		4FCB9BD51BCC608E00B4F841 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppleTVRemoteDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TechBrewers-LTD.AppleTVRemoteDemoApp";
@@ -246,8 +240,6 @@
 		4FCB9BD61BCC608E00B4F841 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppleTVRemoteDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TechBrewers-LTD.AppleTVRemoteDemoApp";
@@ -274,6 +266,7 @@
 				4FCB9BD61BCC608E00B4F841 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
