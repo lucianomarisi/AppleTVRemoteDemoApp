@@ -1,6 +1,6 @@
 # Apple TV remote demo app
 
-[![Build Status](https://travis-ci.org/lucianomarisi/AppleTVRemoteDemoApp.svg?branch=master)](https://travis-ci.org/lucianomarisi/AppleTVRemoteDemoApp.svg?branch=master)
+[![Build Status](https://travis-ci.org/lucianomarisi/AppleTVRemoteDemoApp.svg?branch=master)](https://travis-ci.org/lucianomarisi/AppleTVRemoteDemoApp)
 
 Simple Apple TV remote demo app to various user input from the remote. Aside from the accelerometer, which  all the other user inputs can be tested on the simulator.
 
