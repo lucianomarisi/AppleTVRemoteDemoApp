@@ -90,7 +90,6 @@
 				TargetAttributes = {
 					4FCB9BC41BCC608D00B4F841 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 268S5GJFWZ;
 					};
 				};
 			};
@@ -231,7 +230,7 @@
 		4FCB9BD51BCC608E00B4F841 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 268S5GJFWZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppleTVRemoteDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TechBrewers-LTD.AppleTVRemoteDemoApp";
@@ -243,7 +242,7 @@
 		4FCB9BD61BCC608E00B4F841 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 268S5GJFWZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppleTVRemoteDemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TechBrewers-LTD.AppleTVRemoteDemoApp";
