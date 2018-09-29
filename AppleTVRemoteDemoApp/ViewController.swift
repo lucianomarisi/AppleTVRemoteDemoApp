@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 
   // MARK: UILongPressGestureRecognizer
 
-  func longPress(longPressGestureRecognizer : UILongPressGestureRecognizer) {
+    @objc func longPress(longPressGestureRecognizer : UILongPressGestureRecognizer) {
     switch (longPressGestureRecognizer.state) {
     case .began:
         longPressLabel.textColor = UIColor.red
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
   
   // MARK: UIPanGestureRecognizer
   
-  func userPanned(panGestureRecognizer : UIPanGestureRecognizer) {
+    @objc func userPanned(panGestureRecognizer : UIPanGestureRecognizer) {
     let translation = panGestureRecognizer.translation(in: self.view)
     print(translation)
     guard let originalCenter = originalPanViewCenter else { return }
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
   
   // MARK: Remote events setup
   
-  func controllerDidConnect(note : NSNotification) {
+    @objc func controllerDidConnect(note : NSNotification) {
     controller = GCController.controllers().first
     controller?.motion?.valueChangedHandler = { (motion : GCMotion) -> () in
       
@@ -127,47 +127,47 @@ class ViewController: UIViewController {
   
   // MARK: Tap events
   
-  func selectAction() {
+    @objc func selectAction() {
     flashLabel(label: selectLabel)
   }
   
-  func playPause(){
+    @objc func playPause(){
     flashLabel(label: playPauseLabel)
   }
   
-  func menu(){
+    @objc func menu(){
     flashLabel(label: menuLabel)
   }
   
-  func upArrow(){
+    @objc func upArrow(){
     flashLabel(label: upArrowLabel)
   }
   
-  func downArrow(){
+    @objc func downArrow(){
     flashLabel(label: downArrowLabel)
   }
   
-  func leftArrow(){
+    @objc func leftArrow(){
     flashLabel(label: leftArrowLabel)
   }
   
-  func rightArrow(){
+    @objc func rightArrow(){
     flashLabel(label: rightArrowLabel)
   }
   
-  func swipedRight() {
+    @objc func swipedRight() {
     flashLabel(label: rightSwipeLabel)
   }
   
-  func swipedLeft() {
+    @objc func swipedLeft() {
     flashLabel(label: leftSwipeLabel)
   }
   
-  func swipedUp() {
+    @objc func swipedUp() {
     flashLabel(label: upSwipeLabel)
   }
   
-  func swipedDown() {
+    @objc func swipedDown() {
     flashLabel(label: downSwipeLabel)
   }
   
@@ -181,13 +181,13 @@ class ViewController: UIViewController {
     }
   }
   
-  func addGestureRecognizerWithType(pressType : UIPressType, selector : Selector) {
+  func addGestureRecognizerWithType(pressType : UIPress.PressType, selector : Selector) {
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: selector)
     tapGestureRecognizer.allowedPressTypes = [NSNumber(value: pressType.rawValue)]
     view.addGestureRecognizer(tapGestureRecognizer)
   }
   
-  func addSwipeGestureRecognizerWithType(direction : UISwipeGestureRecognizerDirection, selector : Selector) {
+  func addSwipeGestureRecognizerWithType(direction : UISwipeGestureRecognizer.Direction, selector : Selector) {
     let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: selector)
     swipeGestureRecognizer.direction = direction
     view.addGestureRecognizer(swipeGestureRecognizer)
